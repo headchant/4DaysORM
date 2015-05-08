@@ -51,10 +51,9 @@ local sql, _connect
 
 -- Get database by settings
 if DB.type == SQLITE then
-    require("luasql.sqlite3")
+    local luasql = require("luasql.sqlite3")
     sql = luasql.sqlite3()
     _connect = sql:connect(DB.name)
-
 elseif DB.type == MYSQL then
     require("luasql.mysql")
     sql = luasql.mysql()

@@ -533,6 +533,7 @@ local Select = function(own_table)
                 end
 
                 -- Build WHERE
+                local _where
                 if next(self._rules.where) then
                     _where = self:_condition(self._rules.where, "\nWHERE")
                 else
